@@ -1,0 +1,45 @@
+.formContainer {
+    margin: 20px auto;
+    width: 70%;
+    border: 2px solid #2027ff;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #dde6f9;
+}
+
+.formName {
+    text-align: center;
+    font-weight: bold;
+}
+
+.field {
+    padding: 3px;
+    margin: 2px 0;
+    border-radius: 5px;
+    transition: background-color 2s;
+}
+
+.field:hover {
+    background-color: #88c4f9;
+}
+
+.label {
+    display: inline-block;
+    width: 40%;
+    vertical-align:top;
+}
+
+.options {
+    display: inline-block;
+    width: 59%;
+    vertical-align:top;
+}
+
+.options input[type="text"] {
+    width: 100%;
+}
+
+.formButtons {
+    text-align: center;
+    
+}

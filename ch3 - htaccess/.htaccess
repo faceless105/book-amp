@@ -1,0 +1,35 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+#Error Redirects
+ErrorDocument 404 failed.html
+
+#Redirects
+
+Redirect "/olddir/nolongerexisting.html" "/replacementfile.html"
+
+RewriteRule ^register/?$ index.php?case=registration [QSA]
+RewriteRule ^user/[0-9]/?$ index.php?case=vUser&uID=$1 [QSA]
+
+#RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+#RewriteCond %{HTTPS} !on [NC]
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+#Restricting Access
+#deny from all
+#deny from 192.168.0.1
+#deny from 192.168.0.
+
+<Files ~ "\.txt$">
+Order allow,deny
+Deny from all
+</Files>
+
+Addition to the .htaccess document:
+AuthType Basic
+AuthName "Restricted Content. Login name: test -- Password: pass"
+AuthUserFile .htpasswd
+Require valid-user
+
